@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "@legal/ui/styles.css";
+import { ThemeRegistry } from "@legal/ui";
 import { firm } from "../content/firm";
-import "./globals.css";
+import { firmColors } from "./theme";
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeRegistry colors={firmColors}>{children}</ThemeRegistry>
+      </body>
     </html>
   );
 }

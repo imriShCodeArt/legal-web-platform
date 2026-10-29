@@ -13,12 +13,20 @@ export const config = [
   js.configs.recommended,
   eslintConfigPrettier,
   {
+    files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
     languageOptions: {
       parser: babelParser,
       parserOptions: {
         requireConfigFile: false,
+        ecmaFeatures: {
+          jsx: true,
+        },
         babelOptions: {
-          presets: ["@babel/preset-typescript"],
+          babelrc: false,
+          configFile: false,
+          parserOpts: {
+            plugins: ["jsx", "typescript"],
+          },
         },
       },
     },
@@ -27,6 +35,14 @@ export const config = [
     },
     rules: {
       "turbo/no-undeclared-env-vars": "warn",
+    },
+  },
+  {
+    files: ["**/*.{ts,tsx}"],
+    rules: {
+      // Babel drops type positions, so these rules misread TypeScript.
+      "no-undef": "off",
+      "no-unused-vars": "off",
     },
   },
   {

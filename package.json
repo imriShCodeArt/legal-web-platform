@@ -1,7 +1,17 @@
 {
   "name": "legal-web-platform",
   "private": true,
+  "packageManager": "yarn@4.18.1+sha512.b2e1e7524f654f2749d32b4ebcb4622473cb5bcbc485df2007e12a154e50162a4d795526768bc5f5b8f81717bfd79deb2472813d86fb5ae2eb551fa9c872b08f",
+  "engines": {
+    "node": ">=24",
+    "yarn": "4.18.1"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
+    "preinstall": "node ./scripts/assert-yarn.cjs",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -12,9 +22,5 @@
     "prettier": "3.9.6",
     "turbo": "^2.11.10",
     "typescript": "7.0.2"
-  },
-  "packageManager": "pnpm@10.33.3",
-  "engines": {
-    "node": ">=24"
   }
 }
