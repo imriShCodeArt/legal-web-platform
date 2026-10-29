@@ -1,0 +1,295 @@
+:root {
+  --lwp-ink: #1b2838;
+  --lwp-paper: #f6f3ee;
+  --lwp-accent: #6e2c2c;
+  --lwp-accent-contrast: #fbf7f2;
+  --lwp-muted: #5c6570;
+  --lwp-line: #e0d8cc;
+  --lwp-card: #fffcf8;
+  --lwp-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --lwp-sans: "Segoe UI", system-ui, sans-serif;
+}
+
+.lwp-site {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: var(--lwp-paper);
+  color: var(--lwp-ink);
+  color-scheme: light;
+  font-family: var(--lwp-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.lwp-site main {
+  flex: 1;
+}
+
+.lwp-site h1,
+.lwp-site h2,
+.lwp-site h3,
+.lwp-site p,
+.lwp-site ul {
+  margin: 0;
+}
+
+.lwp-site a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lwp-site a:focus-visible {
+  outline: 2px solid var(--lwp-accent);
+  outline-offset: 3px;
+}
+
+.lwp-skip {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+  transform: translateY(-150%);
+  background: var(--lwp-card);
+  padding: 0.5rem 0.75rem;
+}
+
+.lwp-skip:focus {
+  transform: none;
+}
+
+.lwp-container {
+  width: min(1080px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.lwp-header {
+  border-bottom: 1px solid var(--lwp-line);
+  background: var(--lwp-paper);
+}
+
+.lwp-header-inner,
+.lwp-nav,
+.lwp-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.lwp-header-inner {
+  justify-content: space-between;
+  padding: 1.1rem 0;
+}
+
+.lwp-brand {
+  font-family: var(--lwp-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.lwp-nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.lwp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--lwp-ink);
+  padding: 0.7rem 1.05rem;
+  font: inherit;
+  line-height: 1.2;
+}
+
+.lwp-site a.lwp-button-primary {
+  border-color: var(--lwp-accent);
+  background: var(--lwp-accent);
+  color: var(--lwp-accent-contrast);
+}
+
+.lwp-site a.lwp-button-secondary {
+  background: transparent;
+  color: var(--lwp-ink);
+}
+
+.lwp-site a.lwp-button-primary:hover {
+  filter: brightness(1.08);
+}
+
+.lwp-site a.lwp-button-secondary:hover,
+.lwp-card:hover {
+  border-color: var(--lwp-ink);
+  background: rgba(27, 40, 56, 0.04);
+}
+
+.lwp-hero {
+  padding: 4.5rem 0 3.25rem;
+}
+
+.lwp-hero-compact {
+  padding: 3rem 0 0.5rem;
+}
+
+.lwp-eyebrow,
+.lwp-footer-label,
+.lwp-role {
+  color: var(--lwp-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.lwp-hero h1,
+.lwp-section h2,
+.lwp-card h3 {
+  font-family: var(--lwp-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.lwp-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(2.6rem, 5vw, 4.25rem);
+}
+
+.lwp-hero-compact h1 {
+  max-width: 20ch;
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+}
+
+.lwp-section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.lwp-lede {
+  max-width: 40rem;
+  margin-top: 1rem;
+  color: var(--lwp-muted);
+  font-size: 1.125rem;
+}
+
+.lwp-actions {
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.lwp-section {
+  padding: 3.25rem 0;
+  border-top: 1px solid var(--lwp-line);
+}
+
+.lwp-grid,
+.lwp-contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.lwp-card {
+  border: 1px solid var(--lwp-line);
+  background: var(--lwp-card);
+  padding: 1.25rem 1.25rem 1.4rem;
+}
+
+.lwp-card h3 {
+  margin-bottom: 0.45rem;
+  font-size: 1.45rem;
+}
+
+.lwp-card p,
+.lwp-address,
+.lwp-disclaimer {
+  color: var(--lwp-muted);
+}
+
+.lwp-role {
+  margin-bottom: 0.65rem;
+}
+
+.lwp-bio {
+  margin-top: 0.85rem;
+}
+
+.lwp-address span {
+  display: block;
+}
+
+.lwp-inline-link {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.lwp-footer {
+  margin-top: auto;
+  background: var(--lwp-ink);
+  color: #f4efe8;
+  padding: 2.5rem 0 2rem;
+}
+
+.lwp-footer .lwp-brand,
+.lwp-footer .lwp-address,
+.lwp-footer .lwp-disclaimer,
+.lwp-footer-label {
+  color: inherit;
+}
+
+.lwp-footer .lwp-footer-label {
+  margin-bottom: 0.45rem;
+  color: #e7c7c0;
+}
+
+.lwp-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.lwp-footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.lwp-footer li + li {
+  margin-top: 0.35rem;
+}
+
+.lwp-disclaimer {
+  max-width: 46rem;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 720px) {
+  .lwp-header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .lwp-nav {
+    justify-content: flex-start;
+  }
+
+  .lwp-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .lwp-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .lwp-actions .lwp-button {
+    width: 100%;
+  }
+}

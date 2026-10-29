@@ -1,0 +1,29 @@
+/* Brand tokens for this site. Change these when you copy the starter. */
+:root {
+  --lwp-ink: #1b2838;
+  --lwp-paper: #f6f3ee;
+  --lwp-accent: #6e2c2c;
+  --lwp-accent-contrast: #fbf7f2;
+  --lwp-muted: #5c6570;
+  --lwp-line: #e0d8cc;
+  --lwp-card: #fffcf8;
+  --lwp-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --lwp-sans: "Segoe UI", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--lwp-paper);
+  color: var(--lwp-ink);
+}
